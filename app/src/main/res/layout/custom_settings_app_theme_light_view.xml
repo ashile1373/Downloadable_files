@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/lightView"
+        style="@style/customCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:visibility="visible"
+        app:cardCornerRadius="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/toolbar"
+                    style="@style/customCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll">
+
+                    <RelativeLayout
+                        android:id="@+id/topViewBody"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/blue_500"
+                        android:minHeight="50dp"
+                        android:textAlignment="center">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/ic_back_white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/back"
+                            android:padding="5dp"
+                            android:text="طرح های ورودی"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/title_font_size" />
+
+                    </RelativeLayout>
+
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_light">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:backgroundTint="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:elevation="8dp"
+                    android:padding="10dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/more"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:clickable="false"
+                            android:src="@drawable/ic_more_blue_navy" />
+
+                        <LinearLayout
+                            android:id="@+id/planNumberLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="پایش شماره "
+                                android:textColor="@color/navy_blue"
+                                android:textSize="@dimen/title_font_size" />
+
+                            <TextView
+                                android:id="@+id/planPosition"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="1 "
+                                android:textColor="@color/navy_blue"
+                                android:textSize="@dimen/title_font_size" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text=":"
+                                android:textColor="@color/navy_blue"
+                                android:textSize="@dimen/title_font_size" />
+
+                        </LinearLayout>
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:id="@+id/divider"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/planNumberLayout"
+                            android:layout_alignEnd="@id/planNumberLayout"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:minWidth="2dp"
+                            app:dividerColor="@color/gray" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/divider"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/nameLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/nameImage"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_user_full_name_blue_navy" />
+
+                                <TextView
+                                    android:id="@+id/nameTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/nameImage"
+                                    android:text="نام و نام خانوادگی : "
+                                    android:textColor="@color/navy_blue"
+                                    android:textSize="@dimen/big_font_size"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/nameTitle"
+                                    android:textColor="@color/navy_blue"
+                                    android:text="علی محمدی"
+                                    android:textSize="@dimen/big_font_size" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/phoneNumberLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/phoneNumberImage"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_phone_blue_navy" />
+
+                                <TextView
+                                    android:id="@+id/phoneNumberTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/phoneNumberImage"
+                                    android:text="شماره تلفن : "
+                                    android:textColor="@color/navy_blue"
+
+                                    android:textSize="@dimen/big_font_size"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/phoneNumber"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/phoneNumberTitle"
+                                    android:text="09876543210"
+                                    android:textColor="@color/navy_blue"
+
+                                    android:textSize="@dimen/big_font_size" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/addressLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/addressImage"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_map_blue_navy" />
+
+                                <TextView
+                                    android:id="@+id/addressTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/addressImage"
+                                    android:text="نشانی : "
+                                    android:textColor="@color/navy_blue"
+
+                                    android:textSize="@dimen/big_font_size"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/address"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/addressTitle"
+                                    android:text="تهران، تهران"
+                                    android:textColor="@color/navy_blue"
+
+                                    android:textSize="@dimen/big_font_size" />
+
+                            </RelativeLayout>
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/custom_button_fill"
+                                android:backgroundTint="@color/blue_500"
+                                android:clickable="false"
+                                android:text="اضافه کردن به لیست نظارت ها"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/normal_font_size" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/custom_button_outline"
+                                android:clickable="false"
+                                android:text="تماس با مجری طرح"
+                                android:textColor="@color/blue_500"
+                                android:textSize="@dimen/normal_font_size" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

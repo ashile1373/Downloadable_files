@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/basicInfoPanel"
+        style="@style/customCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="4dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="10dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/customCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|start"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="درج شاغل جدید :"
+                            android:textSize="@dimen/title_font_size" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/nameLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:hint="نام"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/name"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="text|textAutoComplete"
+                                android:maxLength="40"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/familyNameLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:hint="نام خانوادگی"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/familyName"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="text|textAutoComplete"
+                                android:maxLength="40"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/parentNameLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:hint="نام پدر"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/parentName"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="text|textAutoComplete"
+                                android:maxLength="40"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/natCodeLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:hint="کد ملی"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/natCode"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/planBirthDayLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:hint="تاریخ تولد"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/birthday"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                            android:id="@+id/btnChooseStartDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="انتخاب تاریخ"
+                            android:textSize="@dimen/normal_font_size"
+                            app:icon="@drawable/ic_date"
+                            app:iconGravity="end" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/birthplaceLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:hint="محل تولد"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/birthplace"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="text|textAutoComplete"
+                                android:maxLength="40"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/educationOneLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="سطح تحصیلات شاغل"
+                            android:textAlignment="center"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red"
+                            app:startIconDrawable="@drawable/hidden_icon">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/educationOne"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:inputType="none"
+                                android:textSize="@dimen/normal_font_size"
+                                app:boxCornerRadiusBottomEnd="30dp"
+                                app:boxCornerRadiusBottomStart="30dp"
+                                app:boxCornerRadiusTopEnd="30dp"
+                                app:boxCornerRadiusTopStart="30dp"
+                                app:boxStrokeWidth="1dp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/fieldOfStudyLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="رشته ی تحصیلی"
+                            android:textAlignment="center"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red"
+                            app:startIconDrawable="@drawable/hidden_icon">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/fieldOfStudy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:inputType="none"
+                                android:textSize="@dimen/normal_font_size"
+                                app:boxCornerRadiusBottomEnd="30dp"
+                                app:boxCornerRadiusBottomStart="30dp"
+                                app:boxCornerRadiusTopEnd="30dp"
+                                app:boxCornerRadiusTopStart="30dp"
+                                app:boxStrokeWidth="1dp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/specializationLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="نوع تخصص"
+                            android:textAlignment="center"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red"
+                            app:startIconDrawable="@drawable/hidden_icon">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/specialization"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:inputType="none"
+                                android:textSize="@dimen/normal_font_size"
+                                app:boxCornerRadiusBottomEnd="30dp"
+                                app:boxCornerRadiusBottomStart="30dp"
+                                app:boxCornerRadiusTopEnd="30dp"
+                                app:boxCornerRadiusTopStart="30dp"
+                                app:boxStrokeWidth="1dp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/skillTitleLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:hint="عنوان مهارت"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/skillTitle"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="text|textAutoComplete"
+                                android:maxLength="40"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/skillLevelLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:hint="سطح مهارت"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/skillLevel"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="text|textAutoComplete"
+                                android:maxLength="40"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/agreementLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:hint="نوع توافق یا قرارداد"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/agreement"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="text|textAutoComplete"
+                                android:maxLength="40"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/timingLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:hint="زمان بندی اشتغال"
+                            android:textAlignment="center"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red"
+                            app:startIconDrawable="@drawable/hidden_icon">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/timing"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:inputType="none"
+                                android:textSize="@dimen/normal_font_size"
+                                app:boxCornerRadiusBottomEnd="30dp"
+                                app:boxCornerRadiusBottomStart="30dp"
+                                app:boxCornerRadiusTopEnd="30dp"
+                                app:boxCornerRadiusTopStart="30dp"
+                                app:boxStrokeWidth="1dp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                                android:id="@+id/confirm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="ثبت اطلاعات"
+                                android:textSize="@dimen/normal_font_size" />
+
+                            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                                android:id="@+id/cancel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_margin="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/gray"
+                                android:gravity="center"
+                                android:text="لغو عملیات"
+                                android:textSize="@dimen/normal_font_size" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

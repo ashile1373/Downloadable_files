@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/headerdrawer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@drawable/navigation_view_header_background"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePicture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_profile_white"
+            android:transitionName="fade" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/profilePicture"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/custom_click_color_changer"
+            app:srcCompat="@drawable/ic_close_white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profilePicture"
+            android:layout_marginBottom="10dp"
+            android:text="علیرضا قاسمی"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_font_size" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/username"
+            android:text="09876543210"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_font_size" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:background="@drawable/navigation_view_body_background"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/bottomdrawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/navigation_view_body_background"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/pendingToSupperVisionManagementLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_click_color_changer_rectangle"
+                android:padding="10dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/pendingToSupperVisionManagementImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignTop="@id/pendingToSupperVisionManagement"
+                    android:layout_alignBottom="@+id/pendingToSupperVisionManagement"
+                    android:layout_alignParentStart="true"
+                    app:srcCompat="@drawable/ic_update" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pendingToSupperVisionManagement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_toStartOf="@+id/pendingToSupperVisionManagementNavigation"
+                    android:layout_toEndOf="@+id/pendingToSupperVisionManagementImage"
+                    android:text="بارگذاری مجدد طرح ها"
+                    android:textSize="@dimen/title_font_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/pendingToSupperVisionManagementNavigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/pendingToSupperVisionManagement"
+                    android:layout_alignBottom="@+id/pendingToSupperVisionManagement"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_navigate" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/transferPlansManagementLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pendingToSupperVisionManagementLayout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_click_color_changer_rectangle"
+                android:padding="10dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/transferPlansManagementImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/transferPlansManagement"
+                    android:layout_alignBottom="@+id/transferPlansManagement"
+                    android:layout_alignParentStart="true"
+                    app:srcCompat="@drawable/ic_transfer_home" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/transferPlansManagement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_toStartOf="@+id/transferPlansNavigation"
+                    android:layout_toEndOf="@+id/transferPlansManagementImage"
+                    android:text="مدیریت انتقال پایش "
+                    android:textSize="@dimen/title_font_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/transferPlansNavigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/transferPlansManagement"
+                    android:layout_alignBottom="@+id/transferPlansManagement"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_navigate" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/planInquiryLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/transferPlansManagementLayout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_click_color_changer_rectangle"
+                android:padding="10dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/planInquiryImage"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/planInquiry"
+                    android:layout_alignBottom="@+id/planInquiry"
+                    android:layout_alignParentStart="true"
+                    app:srcCompat="@drawable/ic_inquiry_home" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/planInquiry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_toStartOf="@+id/planInquiryNavigation"
+                    android:layout_toEndOf="@+id/planInquiryImage"
+                    android:text="استعلام وضعیت طرح"
+                    android:textSize="@dimen/title_font_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/planInquiryNavigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/planInquiry"
+                    android:layout_alignBottom="@+id/planInquiry"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_navigate" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/planInquiryLayout"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:dividerColor="@color/dark_icon" />
+
+            <RelativeLayout
+                android:id="@+id/settingsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_click_color_changer_rectangle"
+                android:padding="10dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/settingsImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/settings"
+                    android:layout_alignBottom="@+id/settings"
+                    android:layout_alignParentStart="true"
+                    app:srcCompat="@drawable/ic_settings" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_toStartOf="@id/settingsNavigation"
+                    android:layout_toEndOf="@+id/settingsImage"
+                    android:text="تنظیمات"
+                    android:textSize="@dimen/title_font_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/settingsNavigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/settings"
+                    android:layout_alignBottom="@+id/settings"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_navigate" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/signOutLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/settingsLayout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_click_color_changer_rectangle"
+                android:padding="10dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/signOutImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/signOut"
+                    android:layout_alignBottom="@+id/signOut"
+                    android:layout_alignParentStart="true"
+                    app:srcCompat="@drawable/ic_sign_out" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/signOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_toStartOf="@id/signOutNavigation"
+                    android:layout_toEndOf="@+id/signOutImage"
+                    android:text="خروج از حساب کاربری"
+                    android:textSize="@dimen/title_font_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/signOutNavigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/signOut"
+                    android:layout_alignBottom="@+id/signOut"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_navigate" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

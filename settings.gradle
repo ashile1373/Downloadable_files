@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url "https://maven.neshan.org/artifactory/public-maven" }
+        maven { url 'https://jitpack.io' }
+        google()
+        jcenter()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url "https://maven.neshan.org/artifactory/public-maven" }
+        maven { url "https://jitpack.io" }
+        google()
+        jcenter()
+    }
+}
+rootProject.name = "Payesh"
+include ':app'

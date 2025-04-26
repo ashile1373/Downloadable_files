@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.InputNewPlansFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/searchedContents"
+        style="@style/customCardViewWithBlue500TintColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:visibility="gone"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/searchedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:text="موارد مورد جستجو :"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/searchedContentsClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/searchedText"
+                android:layout_alignBottom="@id/searchedText"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_button_fill"
+                android:backgroundTint="@color/blue_200"
+                android:drawableStart="@drawable/ic_close_white"
+                android:drawablePadding="1dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="10dp"
+                android:text="بستن موارد جستجو"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size" />
+
+            <LinearLayout
+                android:id="@+id/searchedContentsNameLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchedContentsClose"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/custom_click_color_changer_rectangle"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:text="نام:"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_font_size" />
+
+                <TextView
+                    android:id="@+id/searchedContentsName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="علیرضا"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_font_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/searchedContentsFamilyLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchedContentsNameLayout"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/custom_click_color_changer_rectangle"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:text="نام خانوادگی:"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_font_size" />
+
+                <TextView
+                    android:id="@+id/searchedContentsFamily"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="قاسمی"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_font_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/searchedContentsNationalCodeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchedContentsFamilyLayout"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/custom_click_color_changer_rectangle"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:text="کد ملی:"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_font_size" />
+
+                <TextView
+                    android:id="@+id/searchedContentsNationalCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="0123456789"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_font_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/searchedContentsPhoneNumberLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchedContentsNationalCodeLayout"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/custom_click_color_changer_rectangle"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:text="شماره تلفن:"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_font_size" />
+
+                <TextView
+                    android:id="@+id/searchedContentsPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="0123456789"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_font_size" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/searchLayout"
+        style="@style/customCardViewWithBlue500TintColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:visibility="gone"
+        android:layoutAnimation="@anim/layout_animation"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/searchText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:padding="5dp"
+                android:text="جستجوی پیشرفته :"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/searchClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/searchText"
+                android:layout_alignBottom="@id/searchText"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_button_fill"
+                android:backgroundTint="@color/blue_200"
+                android:drawableStart="@drawable/ic_close_white"
+                android:drawablePadding="-10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp"
+                android:text="بستن"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/searchCardView"
+                style="@style/customCardViewSearchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchClose"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="10dp">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/searchNameLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:hint="نام"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/searchName"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:inputType="text|textAutoComplete"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/searchFamilyLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:hint="نام خانوادگی"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/searchFamily"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:inputType="text|textAutoComplete"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/searchNationalCodeLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:hint="کد ملی"
+                            app:boxCornerRadiusBottomEnd="30dp"
+                            app:boxCornerRadiusBottomStart="30dp"
+                            app:boxCornerRadiusTopEnd="30dp"
+                            app:boxCornerRadiusTopStart="30dp"
+                            app:boxStrokeErrorColor="@color/red"
+                            app:boxStrokeWidth="1dp"
+                            app:errorIconDrawable="@null"
+                            app:errorTextAppearance="@color/red"
+                            app:errorTextColor="@color/red">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/searchNationalCode"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="center"
+                                android:inputType="numberDecimal"
+                                android:maxLength="10"
+                                android:textSize="@dimen/normal_font_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!--                        <com.google.android.material.textfield.TextInputLayout-->
+                        <!--                            android:id="@+id/searchPhoneNumberLayout"-->
+                        <!--                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginTop="10dp"-->
+                        <!--                            android:hint="شماره ی تلفن"-->
+                        <!--                            app:boxCornerRadiusBottomEnd="30dp"-->
+                        <!--                            app:boxCornerRadiusBottomStart="30dp"-->
+                        <!--                            app:boxCornerRadiusTopEnd="30dp"-->
+                        <!--                            app:boxCornerRadiusTopStart="30dp"-->
+                        <!--                            app:boxStrokeErrorColor="@color/red"-->
+                        <!--                            app:boxStrokeWidth="1dp"-->
+                        <!--                            app:errorIconDrawable="@null"-->
+                        <!--                            app:errorTextAppearance="@color/red"-->
+                        <!--                            app:errorTextColor="@color/red">-->
+
+                        <!--                            <com.google.android.material.textfield.TextInputEditText-->
+                        <!--                                android:id="@+id/searchPhoneNumber"-->
+                        <!--                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:layout_alignParentStart="true"-->
+                        <!--                                android:layout_alignParentEnd="true"-->
+                        <!--                                android:gravity="center"-->
+                        <!--                                android:inputType="numberDecimal"-->
+                        <!--                                android:maxLength="11"-->
+                        <!--                                android:textSize="@dimen/normal_font_size" />-->
+                        <!--                        </com.google.android.material.textfield.TextInputLayout>-->
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/searchStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchCardView"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_button_fill"
+                android:backgroundTint="@color/blue_200"
+                android:text="شروع جستجو"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/inputPlansRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchedContents"
+        android:visibility="visible"
+        android:layoutAnimation="@anim/layout_animation"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/custom_input_requests_recyclerview_item" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/toEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="to the end"
+        android:src="@drawable/ic_down"
+        android:visibility="gone"
+        app:fabCustomSize="50dp"
+        app:maxImageSize="30dp" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="جستجو"
+        android:textSize="@dimen/normal_font_size"
+        android:visibility="invisible"
+        app:icon="@drawable/ic_search_plan"
+        app:iconGravity="end" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerFrameLayoutPlaceHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchedContents"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--add  several shimmer placeholder layout -->
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+            <include layout="@layout/custom_input_requests_shimmer_layout" />
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/offlineLayout"
+        style="@style/customCardViewWithNormalBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/topView"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+
+            android:weightSum="8">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/nothing_found" />
+
+            <TextView
+                android:id="@+id/successful2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/iransans"
+                android:gravity="center"
+                android:text="برای مشاهده ی این صفحه باید به صورت آنلاین وارد شوید!"
+                android:textAlignment="center"
+                android:textSize="@dimen/title_font_size" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/backToLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0"
+                android:background="@drawable/custom_button_fill"
+                android:backgroundTint="@color/blue_500"
+                android:text="ورود به صورت آنلاین..."
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/noServiceLayout"
+        style="@style/customCardViewWithNormalBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/topView"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="9">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/no_network" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/iransans"
+                android:gravity="center"
+                android:text="دسترسی به اینترنت خود را بررسی کنید!"
+                android:textAlignment="center"
+                android:textSize="@dimen/title_font_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/iransans"
+                android:gravity="center"
+                android:text="متأسفانه نتوانستیم لیست طرح های ورودی را نمایش دهیم!"
+                android:textAlignment="center"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/normal_font_size" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/backToHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0"
+                android:background="@drawable/custom_button_fill"
+                android:backgroundTint="@color/blue_500"
+                android:text="بازگشت"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/allDone"
+        style="@style/customCardViewWithNormalBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/topView"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="9">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/all_done" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/iransans"
+                android:gravity="center"
+                android:text="طرحی باقی نمانده است!"
+                android:textAlignment="center"
+                android:textSize="@dimen/title_font_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/iransans"
+                android:gravity="center"
+                android:text="تمامی طرح های شما تکمیل شده اند یا طرحی به شما اختصاص داده نشده است."
+                android:textAlignment="center"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/normal_font_size" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/backToHome2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0"
+                android:background="@drawable/custom_button_fill"
+                android:backgroundTint="@color/blue_500"
+                android:text="بازگشت"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/notFound"
+        style="@style/customCardViewWithNormalBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchedContents"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/topView"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="9">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/not_found" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/iransans"
+                android:gravity="center"
+                android:text="موردی را پیدا نکردیم!"
+                android:textAlignment="center"
+                android:textSize="@dimen/title_font_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/iransans"
+                android:gravity="center"
+                android:text="با توجه به موارد جستجو شده، طرحی یافت نشد."
+                android:textAlignment="center"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/normal_font_size" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/searchAgain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0"
+                android:background="@drawable/custom_button_fill"
+                android:backgroundTint="@color/blue_500"
+                android:text="جستجوی دوباره"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

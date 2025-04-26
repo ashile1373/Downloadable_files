@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ViolationPlanLocationActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topView"
+        style="@style/DefaultAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:background="@color/toast_red"
+                android:minHeight="50dp"
+                android:textAlignment="center">
+
+                <LinearLayout
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/custom_click_color_changer_rectangle"
+                    android:padding="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/ic_back_white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="بازگشت"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/title_font_size" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/cancelRequest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/custom_button_fill"
+                    android:backgroundTint="@color/white"
+                    android:padding="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="لغو عملیات"
+                    android:textColor="@color/toast_red"
+                    android:textSize="@dimen/normal_font_size"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_rounded_dialog"
+            android:backgroundTint="@color/toast_red">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/custom_button_fill"
+                android:gravity="center_horizontal"
+                android:text="اطلاعات عدم تأیید طرح"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size" />
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/correctionView"
+                style="@style/customCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:text="آیا اطلاعات پایه ای طرح نیاز به ویرایش دارد؟"
+                        android:textSize="@dimen/big_font_size" />
+
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/goToCorrection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="ویرایش اطلاعات"
+                        android:textSize="@dimen/normal_font_size"
+                        app:icon="@drawable/ic_product_edit"
+                        android:backgroundTint="@color/toast_yellow"
+                        app:iconGravity="start" />
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/customCardView"
+                android:layout_below="@id/correctionView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layoutAnimation="@anim/layout_animation"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="مکان طرح :"
+                        android:textSize="@dimen/title_font_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="لطفاً نوک نشانگر را روی محل مورد نظر قرار دهید:"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/small_font_size" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/planLocationErrorLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorIconDrawable="@null"
+                        app:errorTextAppearance="@color/red"
+                        app:errorTextColor="@color/red" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/mapPanel"
+                        style="@style/customCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <org.neshan.mapsdk.MapView
+                                android:id="@+id/mapview"
+                                android:layout_width="match_parent"
+                                android:layout_height="250dp" />
+
+                            <ImageView
+                                android:id="@+id/centerView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="-5dp" />
+
+
+                            <ImageView
+                                android:id="@+id/mapMarker"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@id/centerView"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_marker_red" />
+
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/myLocation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_gravity="start|bottom"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:backgroundTint="@color/white"
+                                android:contentDescription="myLocation"
+                                android:elevation="0dp"
+                                android:src="@drawable/ic_my_location"
+                                app:borderWidth="0dp"
+                                app:elevation="0dp"
+                                app:fabSize="normal"
+                                app:tint="@color/navy_blue" />
+
+                            <RelativeLayout
+                                android:id="@+id/mapDragCanceler"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@id/mapview"
+                                android:layout_alignTop="@id/mapview"
+                                android:layout_alignEnd="@id/mapview"
+                                android:layout_alignBottom="@id/mapview"
+                                android:visibility="gone" />
+
+                            <RelativeLayout
+                                android:id="@+id/mapLoading"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@id/mapview"
+                                android:layout_alignTop="@id/mapview"
+                                android:layout_alignEnd="@id/mapview"
+                                android:layout_alignBottom="@id/mapview"
+                                android:background="@color/gray_scale"
+                                android:visibility="gone">
+
+                                <ProgressBar
+                                    android:id="@+id/locationProgressBar"
+                                    style="?android:attr/progressBarStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:indeterminateDrawable="@drawable/circular_pgbar" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/editMyLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="@color/toast_red"
+                        android:text="ویرایش مکان طرح"
+                        android:textSize="@dimen/normal_font_size"
+                        android:visibility="gone"
+                        app:icon="@drawable/ic_edit_location"
+                        app:iconGravity="end" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:justificationMode="inter_word"
+                        android:text="درج نشانی :"
+                        android:textSize="@dimen/title_font_size" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/noAddressAnimationView"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/no_address_found" />
+
+                    <TextView
+                        android:id="@+id/noAddressFoundTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="نشانی تکمیل نشده است."
+                        android:textSize="@dimen/title_font_size" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/addressCardView"
+                        style="@style/customCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:visibility="gone"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="8dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="5dp">
+
+                            <LinearLayout
+                                android:id="@+id/addressPositionLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="جزییات محل طرح : "
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/regionLocationLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/addressPositionLayout"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/regionLocationImage"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_map" />
+
+                                <TextView
+                                    android:id="@+id/regionLocationTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/regionLocationImage"
+                                    android:text="منطقه "
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/regionLocation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/regionLocationTitle"
+                                    android:text="روستایی"
+                                    android:textSize="18sp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/borderLocationLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/regionLocationLayout"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/borderLocationImage"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_border" />
+
+                                <TextView
+                                    android:id="@+id/borderLocationTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/borderLocationImage"
+                                    android:text="موقعیت "
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/borderLocation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/borderLocationTitle"
+                                    android:text="مرزی"
+                                    android:textSize="18sp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/cityLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/borderLocationLayout"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/cityImage"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_location" />
+
+                                <TextView
+                                    android:id="@+id/city"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/cityImage"
+                                    android:text="تهران، تهران"
+                                    android:textSize="18sp" />
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:id="@+id/streetLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cityLayout"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/streetImage"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_direction" />
+
+                                <TextView
+                                    android:id="@+id/street"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/streetImage"
+                                    android:text="خیابان آزادی، خیابان جهان دانش، کوچه شهید حسن محسنی"
+                                    android:textSize="18sp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/postalCodeLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/streetLayout"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/postalCodeImage"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/ic_postal_code" />
+
+                                <TextView
+                                    android:id="@+id/postalCode"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/postalCodeImage"
+                                    android:text="6581863673"
+                                    android:textSize="18sp" />
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/enterAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:backgroundTint="@color/toast_red"
+                        android:text="تکمیل نشانی"
+                        android:textSize="@dimen/normal_font_size"
+                        app:icon="@drawable/ic_address"
+                        app:iconGravity="start" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="تصاویر مربوط به اشتغال / طرح :"
+                        android:textSize="@dimen/title_font_size" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/planImageForErrorLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorIconDrawable="@null"
+                        app:errorTextAppearance="@color/red"
+                        app:errorTextColor="@color/red" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/firstImageCardView"
+                            style="@style/customCardView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="15dp"
+                            app:cardElevation="0dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ic_image_bubble">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/planImageAnimationView"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_centerInParent="true"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="true"
+                                    app:lottie_rawRes="@raw/add_image" />
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/planImageFirst"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_centerInParent="true"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitXY"
+                                    android:visibility="invisible"
+                                    app:shapeAppearanceOverlay="@style/customChatImageView"
+                                    app:srcCompat="@drawable/ic_add_photo" />
+
+                                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                    android:id="@+id/planImageClose"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_alignStart="@id/planImageFirst"
+                                    android:layout_alignTop="@id/planImageFirst"
+                                    android:adjustViewBounds="true"
+                                    android:backgroundTint="@color/gray"
+                                    android:contentDescription="close"
+                                    android:scaleType="center"
+                                    android:src="@drawable/ic_close"
+                                    android:visibility="invisible"
+                                    app:borderWidth="0dp"
+                                    app:fabCustomSize="24dp" />
+
+                                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                    android:id="@+id/planImageEditing"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_alignStart="@id/planImageFirst"
+                                    android:layout_alignTop="@id/planImageFirst"
+                                    android:adjustViewBounds="true"
+                                    android:backgroundTint="@color/gray"
+                                    android:contentDescription="close"
+                                    android:scaleType="center"
+                                    android:src="@drawable/ic_close"
+                                    android:visibility="invisible"
+                                    app:borderWidth="0dp"
+                                    app:fabCustomSize="24dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/planImageAnimationView"
+                                    android:layout_alignStart="@id/planImageFirst"
+                                    android:layout_alignEnd="@id/planImageFirst"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@color/gray"
+                                    android:gravity="center_horizontal"
+                                    android:text="تصویر"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/small_font_size" />
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/bottomBar"
+                        style="@style/customCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp">
+
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/nextStep"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/custom_button_fill"
+                                android:backgroundTint="@color/toast_red"
+                                android:paddingStart="12dp"
+                                android:paddingTop="7dp"
+                                android:paddingEnd="12dp"
+                                android:paddingBottom="7dp"
+                                android:text="مرحله بعد"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/normal_font_size" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

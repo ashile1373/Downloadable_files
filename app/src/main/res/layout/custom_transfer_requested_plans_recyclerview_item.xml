@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/customCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="8dp"
+        android:padding="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/more"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="3dp"
+                android:layout_alignTop="@id/mainBody"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_click_color_changer"
+                android:src="@drawable/ic_more" />
+
+
+            <LinearLayout
+                android:id="@+id/mainBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/planNumberLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/PlanPositionImage"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignTop="@id/PlanPositionTitle"
+                        android:layout_alignBottom="@id/PlanPositionTitle"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_number" />
+
+                    <TextView
+                        android:id="@+id/PlanPositionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/PlanPositionImage"
+                        android:text="کد طرح : "
+                        android:textSize="@dimen/big_font_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/planPosition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/PlanPositionTitle"
+                        android:text="12543"
+                        android:textSize="@dimen/big_font_size" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/nameLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/nameImage"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignTop="@id/nameTitle"
+                        android:layout_alignBottom="@id/nameTitle"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_user_full_name" />
+
+                    <TextView
+                        android:id="@+id/nameTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/nameImage"
+                        android:text="نام مجری : "
+                        android:textSize="@dimen/big_font_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/nameTitle"
+                        android:text="محمد محمدی"
+                        android:textSize="@dimen/big_font_size" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/planTitleLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/planTitleImage"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignTop="@id/planTitleTitle"
+                        android:layout_alignBottom="@id/planTitleTitle"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_plan_title" />
+
+                    <TextView
+                        android:id="@+id/planTitleTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/planTitleImage"
+                        android:text="عنوان طرح : "
+                        android:textSize="@dimen/big_font_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/planTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/planTitleTitle"
+                        android:text="کاشت و برداشت سیب زمینی"
+                        android:textSize="@dimen/big_font_size" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/phoneNumberLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/phoneNumberImage"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_phone" />
+
+                    <TextView
+                        android:id="@+id/phoneNumberTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/phoneNumberImage"
+                        android:text="شماره تلفن : "
+                        android:textSize="@dimen/big_font_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/phoneNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/phoneNumberTitle"
+                        android:text="9181234567"
+                        android:textSize="@dimen/big_font_size" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/addressLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/addressImage"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignTop="@id/addressTitle"
+                        android:layout_alignBottom="@id/addressTitle"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_map" />
+
+                    <TextView
+                        android:id="@+id/addressTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/addressImage"
+                        android:text="مکان : "
+                        android:textSize="@dimen/big_font_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/addressTitle"
+                        android:text="تهران، تهران"
+                        android:textSize="@dimen/big_font_size" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/transferFromLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/transferFromImage"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignTop="@id/transferFromTitle"
+                        android:layout_alignBottom="@id/transferFrom"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_name" />
+
+                    <TextView
+                        android:id="@+id/transferFromTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/transferFromImage"
+                        android:text="انتقال از : "
+                        android:textSize="@dimen/big_font_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/transferFrom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/transferFromTitle"
+                        android:text="مریم حسینی"
+                        android:textSize="@dimen/big_font_size" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/transferToLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/transferToImage"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignTop="@id/transferToTitle"
+                        android:layout_alignBottom="@id/transferToTitle"
+                        android:src="@drawable/ic_transfer" />
+
+                    <TextView
+                        android:id="@+id/transferToTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/transferToImage"
+                        android:text="انتقال به : "
+                        android:textSize="@dimen/big_font_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/transferTo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/transferToTitle"
+                        android:text="رضا کمالی"
+                        android:textSize="@dimen/big_font_size" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/mainBody"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:dividerColor="@color/blue_500" />
+
+            <RelativeLayout
+                android:id="@+id/bottomBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <LinearLayout
+                    android:id="@+id/cancelTransferLayout"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/custom_click_color_changer_rectangle"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_gravity="end">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/ic_toast_error"
+                        android:tint="@color/blue_500" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="لغو انتقال طرح"
+                        android:textColor="@color/blue_500"
+                        android:textSize="@dimen/big_font_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/loading"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/bottomBody"
+                android:layout_alignBottom="@id/bottomBody"
+                android:layout_centerHorizontal="true"
+                android:indeterminateDrawable="@drawable/circular_pgbar"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>
